@@ -29,64 +29,193 @@
         display: flex;
         flex-direction: row;
     }
-
+    @media screen and (min-width: 1200px){
+        .container {
+            width: 1200px;
+            padding: 30px 0;
+        }
+    }
+    
 /* STYLE --------------------------------------------------*/
 
     body {
         font-family: "Lato", sans-serif;
+        font-size: 15px;
         }
+
+    .avatar { 
+        height: 100%;
+        aspect-ratio: 1/1;
+        padding: 10px;
+    }
+
+    .avatar .img { 
+        width: 100%;
+        aspect-ratio: 1/1;
+        overflow: hidden; 
+        border-radius: 50%; 
+        margin: 0 auto;
+        display: inline-block;
+    }
+
+    .avatar .img img { 
+        width: 100%;
+        height: 100%;
+        object-fit: cover;
+
+    }
 
     /* STYLE SIDEBAR --------------------------------------*/
 
-    .col.sidebar {
-        display: none;
-        background-color: red;
-    }
-
-    @media screen and (min-width: 768px){
         .col.sidebar {
+            flex-direction: column;
+        }
+
+        .colsidebar >*{
+            width: 100%;
+        }
+        
+        .col.sidebar .head {
+            background-color: rgba(233,233,233,255);
+            color: rgba(176,176,176,255);
+            height: 70px;
+            width: 100%;
+            align-items: center;
+            justify-content: space-between;
+        }
+
+        .col.sidebar .head .nav {
+            padding: 20px;
+            gap: 20px;
+        }
+
+        .col.sidebar .alert {
+            background-color: rgba(142,218,251,255);
+            height: 70px;
+        }
+
+        .col.sidebar .search-bar {
+            height: 40px;
+            padding: 10px;
+            gap: 10px;
+            align-items: center;
+            border: solid 1px rgba(215,216,218,255);
+            margin: 10px;
+        }
+
+        .col.sidebar .search-bar .search {
+            border: none;
+        }
+
+        .col.sidebar .chats {
             display: flex;
-            width: 80px;
-            height: 100%;
+            flex-direction: column;
+            overflow: auto;
         }
-    }
 
-    @media screen and (min-width: 1200px){
-        .col.sidebar {
-            width: 20%;
+        .col.sidebar .chats .chat-old {
+            height: 70px;
+            width: 100%;
+            flex-direction: row;
+            align-items: center;
         }
-    }
+
+        .col.sidebar .chats >:not(:last-child) {
+            border-bottom: solid 1px rgba(215,216,218,255);
+        }
+
+        .col.sidebar .chats .chat-old .info {
+            width: calc(100% - 70px);
+            height: 100%;
+            position: relative;
+            padding: 10px;
+        }
+
+        .col.sidebar .chats .chat-old .info .contact {
+            font-weight: bold;
+            font-size: 20px;
+        }
+
+        .col.sidebar .chats .chat-old .info .time {
+            color: rgba(215,216,218,255);
+            position: absolute;
+            top: 10px;
+            right: 10px;
+        }
+
+        .col.sidebar .chats .chat-old .info .last-msg {
+            color: rgba(215,216,218,255);
+        }
+
+        .col.sidebar,
+        .col.sidebar .head .nav,
+        .col.sidebar .alert,
+        .col.sidebar .search-bar,
+        .col.sidebar .chats .chat-old .info,
+        .col.sidebar .chats .chat-old .last-msg {
+            display: none;
+        }
+
+        @media screen and (min-width: 768px){
+
+            .col.sidebar {
+                display: flex;
+                width: 70px;
+                height: 100%;
+            }
+            .col.sidebar .head {
+                display: flex;
+            }
+        }
+
+        @media screen and (min-width: 1200px){
+            
+
+
+            .col.sidebar {
+                width: 20%;
+            }
+            .col.sidebar .chats {
+                padding: 10px;
+                border-right: solid 1px rgba(215,216,218,255);
+            }
+            .col.sidebar .head .nav,
+            .col.sidebar .alert,
+            .col.sidebar .search-bar,
+            .col.sidebar .chats .chat-old {
+                display: flex;
+            }
+            .col.sidebar .chats .chat-old .info,
+            .col.sidebar .chats .chat-old .last-msg {
+                display: block;
+            }
+
+        }
 
     /* STYLE main --------------------------------------*/
 
-    .col.main {
-        display: flex;
-        width: 100%;
-        height: 100%;
-        background-color: green;
-    }
-
-    @media screen and (min-width: 768px){
         .col.main {
-            width: calc(100% - 80px);
+            display: flex;
+            width: 100%;
             height: 100%;
+            background-color: green;
         }
-    }
 
-    @media screen and (min-width: 1200px){
-        .col.main {
-            width: 80%;
+        @media screen and (min-width: 768px){
+            .col.main {
+                width: calc(100% - 80px);
+                height: 100%;
+            }
         }
-    }
+
+        @media screen and (min-width: 1200px){
+            .col.main {
+                width: 80%;
+            }
+        }
 
 
 
 
    
-@media screen and (min-width: 768px){
 
-}
-
-@media screen and (min-width: 1200px){
-    
-}
