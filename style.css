@@ -1,0 +1,92 @@
+/* RESET */
+    * {
+        margin: 0;
+        padding: 0;
+        box-sizing: border-box;
+    }
+
+    ul {
+        list-style: none;
+        margin: 0;
+        padding: 0;
+    }
+
+/* GENERAL SETTINGS */
+
+    .flex {
+        display: flex;
+    }
+
+    .container {
+        margin: 0 auto;
+        width: 100%;
+        height: 100vh;
+    }
+
+    .container >.row {
+        width: 100%;
+        height: 100%;
+        display: flex;
+        flex-direction: row;
+    }
+
+/* STYLE --------------------------------------------------*/
+
+    body {
+        font-family: "Lato", sans-serif;
+        }
+
+    /* STYLE SIDEBAR --------------------------------------*/
+
+    .col.sidebar {
+        display: none;
+        background-color: red;
+    }
+
+    @media screen and (min-width: 768px){
+        .col.sidebar {
+            display: flex;
+            width: 80px;
+            height: 100%;
+        }
+    }
+
+    @media screen and (min-width: 1200px){
+        .col.sidebar {
+            width: 20%;
+        }
+    }
+
+    /* STYLE main --------------------------------------*/
+
+    .col.main {
+        display: flex;
+        width: 100%;
+        height: 100%;
+        background-color: green;
+    }
+
+    @media screen and (min-width: 768px){
+        .col.main {
+            width: calc(100% - 80px);
+            height: 100%;
+        }
+    }
+
+    @media screen and (min-width: 1200px){
+        .col.main {
+            width: 80%;
+        }
+    }
+
+
+
+
+   
+@media screen and (min-width: 768px){
+
+}
+
+@media screen and (min-width: 1200px){
+    
+}
