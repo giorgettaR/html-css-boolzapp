@@ -153,27 +153,29 @@ div.sidebar {
 
     .sidebar .card.alert {
         display: flex;
+        flex-grow: 1;
         background-color: rgba(142,218,251,255);
         height: 82px;
-        gap: 20px;
+        gap: 10px;
+        align-items: center;
     }
 
-    .sidebar .alert .img {
+    .sidebar .card.alert .img  {
         height: 82px;
         text-align: center;
-
+        padding-top: 11px;
     }
-
-    .sidebar .alert .img .img{
-        display:inline-block;
-        background-color: white;
-        border-radius: 50%;
+        
+    .sidebar .card.alert i.bell  {
         color: rgba(142,218,251,255);
-        height: 58px;
+        background-color: white;
         text-align: center;
-        line-height: 60px;
-        margin-top: 12px;
+        border-radius: 30px;
+        padding: 10px 20px;
+        height: 60px;
+        line-height: 40px;
     }
+
 
     .sidebar .search-bar {
         display: flex;
