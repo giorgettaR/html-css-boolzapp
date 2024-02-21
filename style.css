@@ -3,6 +3,7 @@
     margin: 0;
     padding: 0;
     box-sizing: border-box;
+    font-size: 15px;
 }
 
 ul {
@@ -38,6 +39,11 @@ a:hover {
 .card .img {
     height: 82px;
     padding: 10px;
+}
+
+.card .info .title {
+    font-weight: bold;
+    font-size: 17px;
 }
 
 .card .img .avatar { 
@@ -207,10 +213,6 @@ div.sidebar {
     position: relative;
     line-height: 25px;
 }
-.sidebar .chats .chat .info .contact {
-    font-weight: bold;
-    font-size: large;
-}
 
 .sidebar .chats .chat .last-msg {
     color: rgba(192,194,196,255);
@@ -269,7 +271,9 @@ div.sidebar {
     height: 82px;
     background-color: rgba(233,233,233,255);
 }
-
+.main .head .info .last-access {
+    color: rgba(192,194,196,255);
+}
 .main .head .nav {
     padding: 20px;
     gap: 20px;
@@ -318,7 +322,7 @@ div.sidebar {
     position: absolute;
     bottom: 5px;
     right: 5px;
-    font-size: small;
+    font-size: 12.5px;
     color: #868686;
 }
 
