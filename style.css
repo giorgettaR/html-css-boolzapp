@@ -13,9 +13,16 @@ ul {
 
 /* STYLE GENERIC */
 
+a {
+    color: rgba(176,176,176,255);
+}
+
+a:hover {
+    color: black;
+}
+
 .card {
     display: flex;
-    height: 100%;
     align-items: center;
 }
 
@@ -77,6 +84,8 @@ body {
     
 .app {
     height: 100vh;
+    background: rgb(1,150,136);
+    background: linear-gradient(180deg, rgba(1,150,136,1) 200px, rgba(217,218,213,1) 200px); 
 }
 .container {
     margin: 0 auto;
@@ -97,6 +106,7 @@ body {
 /* STYLE SIDEBAR --------------------------------------*/
 
 div.sidebar {
+    background-color: white;
     flex-direction: column;
     flex-shrink: 0;
     width: 82px;
@@ -111,7 +121,7 @@ div.sidebar {
 .sidebar .head {
     height: 82px;
     background-color: rgba(233,233,233,255);
-    color: rgba(176,176,176,255);
+    color: rgba(192,194,196,255);
     height: 82px;
     align-items: center;
     justify-content: space-between;
@@ -119,7 +129,7 @@ div.sidebar {
 
 .sidebar .chats {
     flex-direction: column;
-    flex-shrink: 1;
+    flex-grow: 1;
     overflow: auto;
     overflow-x: hidden;
 }
@@ -146,13 +156,21 @@ div.sidebar {
     gap: 10px;
     align-items: center;
 }
-.sidebar .card.alert .svg-container {
+.sidebar .alert.card .svg-container {
     background-color: white;
 }
 
-.sidebar .card.alert .svg-icon.bell {
+.sidebar .alert.card .svg-icon.bell {
     background-image: url(./img/bell-slash-solid.svg);
     filter: invert(83%) sepia(37%) saturate(822%) hue-rotate(168deg) brightness(100%) contrast(97%);
+}
+
+.sidebar .alert.card .info .link {
+    color: blue;
+}
+
+.sidebar .alert.card .info .link:hover {
+    color: purple;
 }
 
 .sidebar .search-bar {
@@ -178,11 +196,10 @@ div.sidebar {
     width: 100%;
     height: 32px;
     background-color: white;
-    border: 1px solid #d6d6d6;
+    border: 1px solid rgba(192,194,196,255);
     outline: none;
     padding-left: 45px;
     padding-right: 10px;
-    transition: padding 300ms;
 }
 
 .sidebar .chats .chat .info {
@@ -196,11 +213,11 @@ div.sidebar {
 }
 
 .sidebar .chats .chat .last-msg {
-    color: rgba(215,216,218,255);
+    color: rgba(192,194,196,255);
 }
 
 .sidebar .chats .chat .time {
-    color: rgba(215,216,218,255);
+    color: rgba(192,194,196,255);
     position: absolute;
     top: 0px;
     right: 10px;
@@ -231,7 +248,7 @@ div.sidebar {
     }
 
     .sidebar .chats >li {
-        border-right: solid 1px rgba(215,216,218,255);
+        border-right: solid 1px rgba(192,194,196,255);
     }
 }
 
@@ -250,9 +267,91 @@ div.sidebar {
 
 .main .head {
     height: 82px;
-    justify-content: space-between;
+    background-color: rgba(233,233,233,255);
 }
 
+.main .head .nav {
+    padding: 20px;
+    gap: 20px;
+}
+
+.main .conversation {
+    display: flex;
+    flex-grow: 1;
+    flex-direction: column;
+    background-image: url(./img/mine.jpg);
+    background-repeat: repeat;
+    overflow: auto;
+    padding: 20px 20px;
+}
+
+.main .conversation .msg {
+    position: relative;
+    padding: 10px;
+    border-radius: 15px;
+    width: fit-content;
+    max-width: 70%;
+    margin: 1px 0;
+}
+
+.main .conversation .msg.sent {
+    background-color: rgba(212,249,186,255);
+    align-self: end;
+}
+
+.main .conversation .msg.received {
+    background-color: white;
+}
+
+.msg.received + .msg.sent {
+    margin-top: 6px;
+}
+
+.msg.sent + .msg.received {
+    margin-top: 6px;
+}
+.main .conversation .msg .content {
+    padding-bottom: 12px;
+}
+
+.main .conversation .msg .time {
+    position: absolute;
+    bottom: 5px;
+    right: 5px;
+    font-size: small;
+    color: #868686;
+}
+
+.main .type-in.card {
+    background-color: rgba(243,237,234,255);
+    height: 40px;
+    flex-shrink: 0;
+    gap: 20px;
+    padding: 0 20px;
+}
+
+.main .type-in.card input {
+    flex-grow: 1;
+    height: 30px;
+    background-color: white;
+    border: 1px solid #d6d6d6;
+    outline: none;
+    padding-left: 20px;
+}
+
+
+
+@media screen and (min-width: 768px){
+    .main .conversation {
+        padding: 50px 50px;
+    }
+}
+
+@media screen and (min-width: 1200px){
+    .main .conversation {
+        padding: 80px 80px;
+    }
+}
 
 
    
